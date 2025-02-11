@@ -75,7 +75,14 @@
               "buildTarget": "shopping-website:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "allowedHosts": ["localhost", "toad-needed-tomcat.ngrok-free.app"],
+            "host": "0.0.0.0",
+            "port": 4200,
+            "disableHostCheck": true
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
