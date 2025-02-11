@@ -1,9 +1,16 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
 
 export const routes: Routes = [
-    {
+  {
+    path: '',
+    loadComponent: () =>
+      import('./layout/layout.component').then((c) => c.LayoutComponent),
+    children: [
+      {
         path: '',
-        component: HomePageComponent
-    }
+        loadComponent: () =>
+          import('./pages/home-page/home-page.component').then((c) => c.HomePageComponent),
+      },
+    ],
+  },
 ];
